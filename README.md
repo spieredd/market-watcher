@@ -1,27 +1,43 @@
-# Next.js + Tailwind CSS Example
+# Market Watcher
 
-This example shows how to use [Tailwind CSS](https://tailwindcss.com/) [(v3.0)](https://tailwindcss.com/blog/tailwindcss-v3) with Next.js. It follows the steps outlined in the official [Tailwind docs](https://tailwindcss.com/docs/guides/nextjs).
+![badge](https://forthebadge.com/images/badges/for-robots.svg) ![badge](https://forthebadge.com/images/badges/powered-by-electricity.svg)
 
-## Preview
+## About
 
-Preview the example live on [StackBlitz](http://stackblitz.com/):
+**Market Watcher** is a blog where you can inform yourself about the latest **economic-related news**.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-tailwindcss)
+## Authors
 
-## Deploy your own
+Our team is currently composed of two persons:
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
+| **Name**  | **Position** | 
+| :---:        |     :---:      | 
+| Adrien Dumont  |   Chief Technical Officer
+| Gaspard Vandenbulcke  |  Marketing Manager
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss&project-name=with-tailwindcss&repository-name=with-tailwindcss)
+## Technologies
 
-## How to use
+- ***NextJS***
+- ***TailwindCSS***
+- ***TypeScript***
+- ***Sanity***
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init) or [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/) to bootstrap the example:
+## Contribute
 
-```bash
-npx create-next-app --example with-tailwindcss with-tailwindcss-app
-# or
-yarn create next-app --example with-tailwindcss with-tailwindcss-app
-```
+1. ***Clone the repo:***
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+        git clone https://github.com/science-math-guy/market-watcher.git
+    
+2. ***Install the dependencies:***
+
+        npm install
+   
+3. ***Run the project:***
+
+        npm run dev
+    
+
+## License
+
+Our project is currently being restricted by the ```MIT LICENSE```.
+
