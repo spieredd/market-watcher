@@ -12,7 +12,7 @@ function Post({ post }: Props) {
   return (
       <main>
           <Header />
-          <img className="w-full h-40 object-cover" src={urlFor(post.mainImage)} alt="" />
+          <img className="w-full h-40 object-cover" src={urlFor(post.mainImage).url()!} alt="" />
           <article className="max-w-3xl m-auto p-5">
               <h1 className="text-3xl mt-10 mb-3">{post.title}</h1>
               <h2 className="text-xl font-light text-gray-500 mb-2">

@@ -11,7 +11,7 @@ interface Props {
   posts: [Post]
 }
 
-const Home: NextPage = ({ posts }: Props) => {
+const Home: NextPage = ({ posts }: any) => {
   let tutorials = posts.slice(0, 3)
   return (
     <div className="mx-auto max-w-7xl">
