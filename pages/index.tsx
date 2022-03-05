@@ -6,6 +6,7 @@ import Footer from '../components/Footer'
 import { sanityClient, urlFor } from '../sanity'
 import { Post } from '../typings'
 import Link from 'next/link'
+//tttt
 
 interface Props {
   posts: [Post]
@@ -15,7 +16,7 @@ const Home: NextPage = ({ posts }: any) => {
   let tutorials = posts.slice(0, 3)
   return (
     <div className="mx-auto max-w-7xl">
-      <Head>
+      <Head> 
         <title>Market Watcher - Economic News</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
