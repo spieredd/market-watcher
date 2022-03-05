@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import { sanityClient, urlFor } from '../sanity'
 import { Post } from '../typings'
 import Link from 'next/link'
-//tttt
+//ttttrr
 
 interface Props {
   posts: [Post]
