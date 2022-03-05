@@ -9,6 +9,8 @@
 # testing
 /coverage
 
+/market-watcher/node_modules
+
 # next.js
 /.next/
 /out/
