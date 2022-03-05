@@ -40,6 +40,7 @@ const Home: NextPage = ({ posts }: any) => {
           alt=""
         />
       </div>
+      {/* t */}
       <h1 className="py-5 text-xl font-bold">Latest Articles</h1>
       <hr />
       <div className="gris-cols-1 grid gap-3 p-2 sm:grid-cols-2 md:gap-6 md:p-6 lg:grid-cols-3">
