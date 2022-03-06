@@ -48,8 +48,8 @@ const Home: NextPage = ({ posts }: any) => {
             We try to provide you with a maximum of daily information regarding
             international finance and economics issues.{'  '}
             <Link href="/about">
-              <span className="text-blue-900 underline cursor-pointer">
-                (Discover our project) 
+              <span className="cursor-pointer text-blue-900 underline">
+                (Discover our project)
               </span>
             </Link>
           </h2>
@@ -61,7 +61,14 @@ const Home: NextPage = ({ posts }: any) => {
         />
       </div>
       {/* t */}
-      <h1 className="py-5 text-xl font-bold">Latest Articles <Link href="/"><span className="text-xs cursor-pointer underline text-blue-800 font-normal	">(See all)</span></Link></h1>
+      <h1 className="py-5 text-xl font-bold">
+        Latest Articles{' '}
+        <Link href="/articles">
+          <span className="cursor-pointer text-xs font-normal text-blue-800 underline	">
+            (See all)
+          </span>
+        </Link>
+      </h1>
       <hr />
       <div className="gris-cols-1 grid gap-3 p-2 sm:grid-cols-2 md:gap-6 md:p-6 lg:grid-cols-3">
         {tutorials.map((post) => {
@@ -77,7 +84,15 @@ const Home: NextPage = ({ posts }: any) => {
                   <div>
                     <p className="text-lg font-bold">{post.title}</p>
                     <p className="text-xs"> by {post.author.name}</p>
-                    <p className="text-xs pt-2 text-gray-500">{new Date(post._createdAt).toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}</p>
+                    <p className="pt-2 text-xs text-gray-500">
+                      {new Date(post._createdAt).toLocaleString([], {
+                        year: 'numeric',
+                        month: 'numeric',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </p>
                   </div>
                   <img
                     className="h-12 w-12 rounded-full"
@@ -106,7 +121,15 @@ const Home: NextPage = ({ posts }: any) => {
                   <div>
                     <p className="text-lg font-bold">{post.title}</p>
                     <p className="text-xs"> by {post.author.name}</p>
-                    <p className="text-xs pt-2 text-gray-500">{new Date(post._createdAt).toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}</p>
+                    <p className="pt-2 text-xs text-gray-500">
+                      {new Date(post._createdAt).toLocaleString([], {
+                        year: 'numeric',
+                        month: 'numeric',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </p>
                   </div>
                   <img
                     className="h-12 w-12 rounded-full"
@@ -136,7 +159,15 @@ const Home: NextPage = ({ posts }: any) => {
                   <div>
                     <p className="text-lg font-bold">{post.title}</p>
                     <p className="text-xs"> by {post.author.name}</p>
-                    <p className="text-xs pt-2 text-gray-500">{new Date(post._createdAt).toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}</p>
+                    <p className="pt-2 text-xs text-gray-500">
+                      {new Date(post._createdAt).toLocaleString([], {
+                        year: 'numeric',
+                        month: 'numeric',
+                        day: 'numeric',
+                        hour: '2-digit',
+                        minute: '2-digit',
+                      })}
+                    </p>
                   </div>
                   <img
                     className="h-12 w-12 rounded-full"
