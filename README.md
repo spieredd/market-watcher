@@ -4,7 +4,7 @@
 
 ## About
 
-**Market Watcher** is a blog where you can inform yourself about the latest **economic-related news**.
+[**Market Watcher**](https://www.market-watcher.tech/) is a blog where you can inform yourself about the latest **economic-related news**.
 
 ## Authors
 
