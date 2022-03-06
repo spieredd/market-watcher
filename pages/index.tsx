@@ -37,7 +37,7 @@ const Home: NextPage = ({ posts }: any) => {
       <div className="flex items-center justify-between border-y border-black bg-yellow-400 py-10 lg:py-5">
         <div className="space-y-5 px-10">
           <h1 className="max-w-xl font-serif text-5xl">
-            Stay informed on economic news with{' '}
+            Stay informed on financial news and economic issues with{' '}
             <span className="decpration-black underline decoration-4">
               Market Watcher
             </span>
