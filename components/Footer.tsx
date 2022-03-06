@@ -307,8 +307,8 @@ function Footer() {
 
       <div className="p-4 text-center">
         <span>© 2022 Copyright: </span>
-        <Link href="https://www.market-watcher.tech/home">
-          <span className="font-bold text-white	">Market Watcher</span>
+        <Link href="https://www.market-watcher.tech/">
+          <span className="cursor-pointer font-bold text-white	">Market Watcher</span>
         </Link>
       </div>
     </footer>

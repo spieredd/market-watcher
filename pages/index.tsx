@@ -49,7 +49,7 @@ const Home: NextPage = ({ posts }: any) => {
             international finance and economics issues.{'  '}
             <Link href="/about">
               <span className="text-blue-900 underline cursor-pointer">
-                (About the project) 
+                (Discover our project) 
               </span>
             </Link>
           </h2>
@@ -61,7 +61,7 @@ const Home: NextPage = ({ posts }: any) => {
         />
       </div>
       {/* t */}
-      <h1 className="py-5 text-xl font-bold">Latest Articles</h1>
+      <h1 className="py-5 text-xl font-bold">Latest Articles <Link href="/"><span className="text-xs cursor-pointer underline text-blue-800 font-normal	">(See all)</span></Link></h1>
       <hr />
       <div className="gris-cols-1 grid gap-3 p-2 sm:grid-cols-2 md:gap-6 md:p-6 lg:grid-cols-3">
         {tutorials.map((post) => {
@@ -77,6 +77,7 @@ const Home: NextPage = ({ posts }: any) => {
                   <div>
                     <p className="text-lg font-bold">{post.title}</p>
                     <p className="text-xs"> by {post.author.name}</p>
+                    <p className="text-xs pt-2 text-gray-500">{new Date(post._createdAt).toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}</p>
                   </div>
                   <img
                     className="h-12 w-12 rounded-full"
@@ -105,6 +106,7 @@ const Home: NextPage = ({ posts }: any) => {
                   <div>
                     <p className="text-lg font-bold">{post.title}</p>
                     <p className="text-xs"> by {post.author.name}</p>
+                    <p className="text-xs pt-2 text-gray-500">{new Date(post._createdAt).toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}</p>
                   </div>
                   <img
                     className="h-12 w-12 rounded-full"
@@ -134,6 +136,7 @@ const Home: NextPage = ({ posts }: any) => {
                   <div>
                     <p className="text-lg font-bold">{post.title}</p>
                     <p className="text-xs"> by {post.author.name}</p>
+                    <p className="text-xs pt-2 text-gray-500">{new Date(post._createdAt).toLocaleString([], {year: 'numeric', month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'})}</p>
                   </div>
                   <img
                     className="h-12 w-12 rounded-full"
@@ -156,6 +159,7 @@ export default Home
 export const getServerSideProps = async () => {
   const query = `*[_type == "post"]{
     _id,
+    _createdAt,
     title,
     author->{
     name,
