@@ -6,7 +6,7 @@ import Footer from '../components/Footer'
 import { sanityClient, urlFor } from '../sanity'
 import { Post } from '../typings'
 import Link from 'next/link'
-//ttttrr
+import CookieConsent from 'react-cookie-consent'
 
 interface Props {
   posts: [Post]
@@ -16,7 +16,18 @@ const Home: NextPage = ({ posts }: any) => {
   let tutorials = posts.slice(0, 3)
   return (
     <div className="mx-auto max-w-7xl">
-      <Head> 
+      <CookieConsent
+        location="bottom"
+        buttonText="Accept"
+        cookieName="myAwesomeCookieName2"
+        style={{ background: '#2B373B' }}
+        buttonStyle={{ color: '#4e503b', fontSize: '15px' }}
+        expires={150}
+      >
+        Agree with the <a className="underline" href="/">terms of conditions</a>
+      </CookieConsent>
+
+      <Head>
         <title>Market Watcher - Economic News</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
