@@ -24,27 +24,34 @@ const Home: NextPage = ({ posts }: any) => {
         buttonStyle={{ color: '#4e503b', fontSize: '15px' }}
         expires={150}
       >
-        Agree with the <a className="underline" href="/">terms of conditions</a>
+        Agree with the{' '}
+        <a className="underline" href="/">
+          terms of conditions
+        </a>
       </CookieConsent>
 
       <Head>
         <title>Market Watcher - Economic News</title>
         <link rel="icon" href="/favicon.ico" />
-
       </Head>
       <Header />
 
       <div className="flex items-center justify-between border-y border-black bg-yellow-400 py-10 lg:py-5">
         <div className="space-y-5 px-10">
           <h1 className="max-w-xl font-serif text-5xl">
-            Stay informed on financial news and economic issues with{' '}
+            Stay informed on economic news with{' '}
             <span className="decpration-black underline decoration-4">
               Market Watcher
             </span>
           </h1>
           <h2 className="max-w-xl">
-            We try to provide you with a maximum of daily informations about
-            economy and subjects related to it.
+            We try to provide you with a maximum of daily information regarding
+            international finance and economics issues.{'  '}
+            <Link href="/about">
+              <span className="text-blue-900 underline cursor-pointer">
+                (About the project) 
+              </span>
+            </Link>
           </h2>
         </div>
         <img
