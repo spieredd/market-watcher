@@ -30,6 +30,7 @@ const Home: NextPage = ({ posts }: any) => {
       <Head>
         <title>Market Watcher - Economic News</title>
         <link rel="icon" href="/favicon.ico" />
+
       </Head>
       <Header />
 
