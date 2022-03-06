@@ -61,7 +61,7 @@ const Home: NextPage = ({ posts }: any) => {
         />
       </div>
       {/* t */}
-      <h1 className="py-5 text-xl font-bold">
+      <h1 className="px-10 md:px-10 py-5 text-xl font-bold">
         Latest Articles{' '}
         <Link href="/articles">
           <span className="cursor-pointer text-xs font-normal text-blue-800 underline	">
