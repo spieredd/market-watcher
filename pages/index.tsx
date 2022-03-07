@@ -18,9 +18,9 @@ const Home: NextPage = ({ posts }: any) => {
     var dateA: any = new Date(a._createdAt),
       dateB: any = new Date(b._createdAt)
     return dateA - dateB
-  });
-  console.log(posts);
-  let tutorials = posts.slice(posts.length - 3, posts.length).reverse();
+  })
+  console.log(posts)
+  let tutorials = posts.slice(posts.length - 3, posts.length).reverse()
   return (
     <div className="mx-auto max-w-7xl">
       <CookieConsent
@@ -114,6 +114,8 @@ const Home: NextPage = ({ posts }: any) => {
                                 className={
                                   element.title === 'Tutorial'
                                     ? 'mr-2 inline-block rounded-full bg-green-200 px-3 py-1 text-sm font-semibold text-gray-700'
+                                    : element.title === 'Ukraine'
+                                    ? 'mr-2 inline-block rounded-full bg-red-200 px-3 py-1 text-sm font-semibold text-gray-700'
                                     : 'mr-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700'
                                 }
                               >
