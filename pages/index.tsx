@@ -61,7 +61,7 @@ const Home: NextPage = ({ posts }: any) => {
         />
       </div>
       {/* t */}
-      <h1 className="px-10 md:px-10 py-5 text-xl font-bold">
+      <h1 className="px-10 py-5 text-xl font-bold md:px-10">
         Latest Articles{' '}
         <Link href="/articles">
           <span className="cursor-pointer text-xs font-normal text-blue-800 underline	">
@@ -93,6 +93,16 @@ const Home: NextPage = ({ posts }: any) => {
                         minute: '2-digit',
                       })}
                     </p>
+                    <hr className="my-2" />
+                    <div>
+                      {post.categories?post.categories.map(element => {
+                        return (
+                          <span className={element.title==='Tutorial'?'mr-2 inline-block rounded-full bg-green-200 px-3 py-1 text-sm font-semibold text-gray-700':'mr-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700'}>
+                            #{element.title}
+                          </span>
+                        )
+                      }):console.log('hello')}
+                    </div>
                   </div>
                   <img
                     className="h-12 w-12 rounded-full"
@@ -192,13 +202,17 @@ export const getServerSideProps = async () => {
     _id,
     _createdAt,
     title,
+    categories[]->{
+    title
+  },
     author->{
     name,
     image
   },
   description,
   mainImage,
-  slug
+  slug,
+  
     
   }`
 
