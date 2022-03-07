@@ -35,15 +35,20 @@ const Home: NextPage = ({ posts }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
           <Header />
+          <img
+          className="h-40 w-full object-cover"
+          src="https://wallpapercave.com/wp/wp3134771.jpg"
+          alt=""
+        />
           <hr />
-      <h1 className="py-5 text-xl font-light text-green-700">
+      <h1 className="py-5 text-xl font-semibold text-gray-700">
         All the articles
           </h1>
           <div className="flex items-center flex-start pb-5">
-            <div className="flex border-2 rounded">
-                <input type="text" className="px-4 py-2 w-80" placeholder="Search..."/>
+            <div className="flex border-gray-200 border-2 rounded-3xl">
+                <input type="text" className="px-4 py-2 w-80 rounded-3xl" placeholder="Search..." disabled/>
                 <button className="flex items-center justify-center px-4 border-l">
-                    <svg className="w-6 h-6 text-gray-600" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                    <svg className="w-6 h-6 text-gray-200" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 24 24">
                         <path
                             d="M16.32 14.9l5.39 5.4a1 1 0 0 1-1.42 1.4l-5.38-5.38a8 8 0 1 1 1.41-1.41zM10 16a6 6 0 1 0 0-12 6 6 0 0 0 0 12z" />
