@@ -14,7 +14,7 @@ function Post({ post }: Props) {
   return (
     <div>
       <Head>
-        <title>Market Watcher - Economic News</title>
+        <title>Market Watcher - Financial News</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
@@ -44,11 +44,11 @@ function Post({ post }: Props) {
           </div>
           <div className="flex items-center space-x-5 text-green-600">
             <h3>Sign In</h3>
-            <h3 className="rounded-full border border-green-600 px-4 py-1">
+            <h3 className="duration-2000 cursor-pointer rounded-full border border-green-600 px-4 py-1 transition-transform ease-in-out hover:bg-green-600 hover:text-white">
               Get Started
             </h3>
           </div>
-        </header>{' '}
+        </header>
         <img
           className="h-40 w-full object-cover"
           src={urlFor(post.mainImage).url()!}

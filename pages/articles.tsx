@@ -13,7 +13,7 @@ interface Props {
 }
 
 const Home: NextPage = ({ posts }: any) => {
-    let tutorials = posts;
+  let tutorials = posts;
   return (
     <div className="mx-auto max-w-7xl">
       <CookieConsent
@@ -31,7 +31,7 @@ const Home: NextPage = ({ posts }: any) => {
       </CookieConsent>
 
       <Head>
-        <title>Market Watcher - Economic News</title>
+        <title>Market Watcher - Financial News</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
           <Header />
@@ -80,6 +80,16 @@ const Home: NextPage = ({ posts }: any) => {
                         minute: '2-digit',
                       })}
                     </p>
+                    <hr className="my-2" />
+                    <div>
+                      {post.categories?post.categories.map(element => {
+                        return (
+                          <span className={element.title==='Tutorial'?'mr-2 inline-block rounded-full bg-green-200 px-3 py-1 text-sm font-semibold text-gray-700':'mr-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700'}>
+                            #{element.title}
+                          </span>
+                        )
+                      }):console.log('hello')}
+                    </div>
                   </div>
                   <img
                     className="h-12 w-12 rounded-full"
@@ -104,13 +114,17 @@ export const getServerSideProps = async () => {
     _id,
     _createdAt,
     title,
+    categories[]->{
+    title
+  },
     author->{
     name,
     image
   },
   description,
   mainImage,
-  slug
+  slug,
+  
     
   }`
 

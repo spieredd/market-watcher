@@ -7,13 +7,20 @@ import { sanityClient, urlFor } from '../sanity'
 import { Post } from '../typings'
 import Link from 'next/link'
 import CookieConsent from 'react-cookie-consent'
+import Script from 'next/script'
 
 interface Props {
   posts: [Post]
 }
 
 const Home: NextPage = ({ posts }: any) => {
-  let tutorials = posts.slice(0, 3)
+  posts.sort(function (a, b) {
+    var dateA: any = new Date(a._createdAt),
+      dateB: any = new Date(b._createdAt)
+    return dateA - dateB
+  });
+  console.log(posts);
+  let tutorials = posts.slice(posts.length - 3, posts.length).reverse();
   return (
     <div className="mx-auto max-w-7xl">
       <CookieConsent
@@ -31,15 +38,20 @@ const Home: NextPage = ({ posts }: any) => {
       </CookieConsent>
 
       <Head>
-        <title>Market Watcher - Economic News</title>
+        <title>Market Watcher - Financial News</title>
         <link rel="icon" href="/favicon.ico" />
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8424057093962720"
+          crossOrigin="anonymous"
+        ></Script>
       </Head>
       <Header />
 
       <div className="flex items-center justify-between border-y border-black bg-yellow-400 py-10 lg:py-5">
         <div className="space-y-5 px-10">
           <h1 className="max-w-xl font-serif text-5xl">
-            Stay informed on economic news with{' '}
+            Stay informed on financial news with{' '}
             <span className="decpration-black underline decoration-4">
               Market Watcher
             </span>
@@ -95,13 +107,21 @@ const Home: NextPage = ({ posts }: any) => {
                     </p>
                     <hr className="my-2" />
                     <div>
-                      {post.categories?post.categories.map(element => {
-                        return (
-                          <span className={element.title==='Tutorial'?'mr-2 inline-block rounded-full bg-green-200 px-3 py-1 text-sm font-semibold text-gray-700':'mr-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700'}>
-                            #{element.title}
-                          </span>
-                        )
-                      }):console.log('hello')}
+                      {post.categories
+                        ? post.categories.map((element) => {
+                            return (
+                              <span
+                                className={
+                                  element.title === 'Tutorial'
+                                    ? 'mr-2 inline-block rounded-full bg-green-200 px-3 py-1 text-sm font-semibold text-gray-700'
+                                    : 'mr-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700'
+                                }
+                              >
+                                #{element.title}
+                              </span>
+                            )
+                          })
+                        : console.log('hello')}
                     </div>
                   </div>
                   <img
@@ -140,6 +160,24 @@ const Home: NextPage = ({ posts }: any) => {
                         minute: '2-digit',
                       })}
                     </p>
+                    <hr className="my-2" />
+                    <div>
+                      {post.categories
+                        ? post.categories.map((element) => {
+                            return (
+                              <span
+                                className={
+                                  element.title === 'Tutorial'
+                                    ? 'mr-2 inline-block rounded-full bg-green-200 px-3 py-1 text-sm font-semibold text-gray-700'
+                                    : 'mr-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700'
+                                }
+                              >
+                                #{element.title}
+                              </span>
+                            )
+                          })
+                        : console.log('hello')}
+                    </div>
                   </div>
                   <img
                     className="h-12 w-12 rounded-full"
@@ -153,43 +191,6 @@ const Home: NextPage = ({ posts }: any) => {
         })}
       </div>
       <hr />
-      <h1 className="py-5 text-xl font-bold">Finance</h1>
-      <hr />
-      <div className="gris-cols-1 grid gap-3 p-2 sm:grid-cols-2 md:gap-6 md:p-6 lg:grid-cols-3">
-        {tutorials.map((post) => {
-          return (
-            <Link key={post._id} href={`/post/${post.slug.current}`}>
-              <div className="group cursor-pointer overflow-hidden rounded-lg border">
-                <img
-                  className="h-60 w-full object-cover transition-transform duration-200 ease-in-out group-hover:scale-105"
-                  src={urlFor(post.mainImage).url()!}
-                  alt=""
-                />
-                <div className="flex justify-between bg-white p-5">
-                  <div>
-                    <p className="text-lg font-bold">{post.title}</p>
-                    <p className="text-xs"> by {post.author.name}</p>
-                    <p className="pt-2 text-xs text-gray-500">
-                      {new Date(post._createdAt).toLocaleString([], {
-                        year: 'numeric',
-                        month: 'numeric',
-                        day: 'numeric',
-                        hour: '2-digit',
-                        minute: '2-digit',
-                      })}
-                    </p>
-                  </div>
-                  <img
-                    className="h-12 w-12 rounded-full"
-                    src={urlFor(post.author.image).url()!}
-                    alt=""
-                  />
-                </div>
-              </div>
-            </Link>
-          )
-        })}
-      </div>
       <Footer />
     </div>
   )
