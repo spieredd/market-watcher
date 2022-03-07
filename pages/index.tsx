@@ -116,6 +116,8 @@ const Home: NextPage = ({ posts }: any) => {
                                     ? 'mr-2 inline-block rounded-full bg-green-200 px-3 py-1 text-sm font-semibold text-gray-700'
                                     : element.title === 'Ukraine'
                                     ? 'mr-2 inline-block rounded-full bg-red-200 px-3 py-1 text-sm font-semibold text-gray-700'
+                                    : element.title === 'Crypto' || 'Finance'
+                                    ? 'mr-2 inline-block rounded-full bg-yellow-200 px-3 py-1 text-sm font-semibold text-gray-700'
                                     : 'mr-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-700'
                                 }
                               >
