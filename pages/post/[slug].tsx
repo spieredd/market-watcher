@@ -79,19 +79,22 @@ function Post({ post }: Props) {
               content={post.body}
               serializers={{
                 h1: (props: any) => {
-                  ;<h1 className="my-5 text-2xl font-bold" {...props} />
+                  <h1 className="my-5 text-2xl font-bold" {...props} />
                 },
                 h2: (props: any) => {
-                  ;<h1 className="my-5 text-xl font-bold" {...props} />
+                  <h1 className="my-5 text-xl font-bold" {...props} />
                 },
                 li: ({ children }: any) => {
-                  ;<li className="ml-4 list-disc">{children}</li>
+                  <li className="ml-4 list-disc">{children}</li>
                 },
                 link: ({ href, children }: any) => {
-                  ;<a href={href} className="text-blue-500 hover:underline">
+                  <a href={href} className="text-blue-500 hover:underline">
                     {children}
                   </a>
                 },
+                hardBreak: (props: any) => {
+                  <br />
+                }
               }}
             />
           </div>
