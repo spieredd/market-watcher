@@ -92,8 +92,8 @@ function Post({ post }: Props) {
                     {children}
                   </a>
                 },
-                hardBreak: (props: any) => {
-                  <br />
+                hardBreak: () => {
+                  <hr/>
                 }
               }}
             />
