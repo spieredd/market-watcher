@@ -16,6 +16,7 @@ function Post({ post }: Props) {
       <Head>
         <title>Market Watcher - Financial News</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="stylesheet" href="style.css" />
       </Head>
       <main>
         <header className="mx-auto flex max-w-7xl justify-between p-5">
@@ -71,32 +72,25 @@ function Post({ post }: Props) {
               Published at {new Date(post._createdAt).toLocaleString()}
             </p>
           </div>
-          <div className="my-10">
-            <PortableText
-              className=""
+          <div className="my-50">
+            {/* <BlockContent
+              blocks={post.body}
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-              content={post.body}
-              serializers={{
-                h1: (props: any) => {
-                  <h1 className="my-5 text-2xl font-bold" {...props} />
-                },
-                h2: (props: any) => {
-                  <h1 className="my-5 text-xl font-bold" {...props} />
-                },
-                li: ({ children }: any) => {
-                  <li className="ml-4 list-disc">{children}</li>
-                },
-                link: ({ href, children }: any) => {
-                  <a href={href} className="text-blue-500 hover:underline">
-                    {children}
-                  </a>
-                },
-                hardBreak: () => {
-                  <hr/>
-                }
-              }}
-            />
+            /> */}
+            <p className="my-5 text-base body-text">
+              <PortableText
+                className="py-10"
+                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
+                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
+                content={post.body}
+                serializers={{
+                  p: (props: any) => {
+                    return(<p className="my-10" {...props}/>)
+                  },
+                }}
+              />
+            </p>
           </div>
         </article>
       </main>
