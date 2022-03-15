@@ -71,8 +71,8 @@ function Post({ post }: Props) {
               />
               <p className="font-extralight">
                 Blog post by{' '}
-                <span className="text-green-600">
-                  <Link href="/authors" className="cursor-pointer">
+                <span className="text-green-600 cursor-pointer">
+                  <Link href="/authors">
                     {post.author.name}
                   </Link>
                 </span>{' '}
