@@ -47,6 +47,56 @@ const Home: NextPage = ({ posts }: any) => {
         ></Script>
       </Head>
       <Header />
+      <div className="flex items-center justify-between bg-gray-800 py-10 text-white lg:py-5">
+        <div className="flex flex-row items-center px-5">
+          <h2 className="max-w-xl text-xl">
+            NASDAQ{' '}
+            <span className="decapration-black text-green-400 decoration-4">
+              (+0.46%)
+            </span>
+          </h2>
+          <h2 className="mx-5 max-w-xl text-xl">
+            CAC40{' '}
+            <span className="decapration-black text-green-400 decoration-4">
+              (+0.24%)
+            </span>
+          </h2>
+          <div className="flex flex-col items-center justify-center">
+            <p className="text-base font-bold">Top shares</p>
+            <ul className="flex flex-col items-center justify-center text-sm">
+              <li>
+                Thales{' '}
+                <span className="decapration-black text-green-400 decoration-4">
+                  (+0.24%)
+                </span>
+              </li>
+              <li>
+                Dassault{' '}
+                <span className="decapration-black text-green-400 decoration-4">
+                  (+0.24%)
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div className="mx-5 flex flex-col items-center justify-center">
+            <p className="text-base font-bold">Flop shares</p>
+            <ul className="flex flex-col items-center justify-center text-sm">
+              <li>
+                Hermes{' '}
+                <span className="decapration-black text-red-400 decoration-4">
+                  (+0.24%)
+                </span>
+              </li>
+              <li>
+                Alstrom{' '}
+                <span className="decapration-black text-red-400 decoration-4">
+                  (+0.24%)
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
       <div className="flex items-center justify-between border-y border-black bg-yellow-400 py-10 lg:py-5">
         <div className="space-y-5 px-10">
