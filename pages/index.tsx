@@ -55,8 +55,8 @@ const Home: NextPage = ({ posts }: any) => {
               (+0.46%)
             </span>
           </h2>
-          <h2 className="mx-5 max-w-xl text-xl">
-            CAC40{' '}
+          <h2 className="mx-5 max-w-xl font-semiBold text-xl">
+            CAC 40{' '}
             <span className="decapration-black text-green-400 decoration-4">
               (+0.24%)
             </span>
@@ -67,13 +67,13 @@ const Home: NextPage = ({ posts }: any) => {
               <li>
                 Thales{' '}
                 <span className="decapration-black text-green-400 decoration-4">
-                  (+0.24%)
+                  (+0.35%)
                 </span>
               </li>
               <li>
                 Dassault{' '}
                 <span className="decapration-black text-green-400 decoration-4">
-                  (+0.24%)
+                  (+0.19%)
                 </span>
               </li>
             </ul>
@@ -84,13 +84,13 @@ const Home: NextPage = ({ posts }: any) => {
               <li>
                 Hermes{' '}
                 <span className="decapration-black text-red-400 decoration-4">
-                  (+0.24%)
+                  (-0.21%)
                 </span>
               </li>
               <li>
                 Alstrom{' '}
                 <span className="decapration-black text-red-400 decoration-4">
-                  (+0.24%)
+                  (-0.11%)
                 </span>
               </li>
             </ul>
@@ -204,7 +204,7 @@ const Home: NextPage = ({ posts }: any) => {
                 <div className="flex justify-between bg-white p-5">
                   <div>
                     <p className="text-lg font-bold">{post.title}</p>
-                    <p className="text-xs"> by {post.author.name}</p>
+                    <p className="text-xs"> by <Link href="/authors">{post.author.name}</Link></p>
                     <p className="pt-2 text-xs text-gray-500">
                       {new Date(post._createdAt).toLocaleString([], {
                         year: 'numeric',
