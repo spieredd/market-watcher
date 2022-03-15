@@ -11,6 +11,8 @@ interface Props {
   post: Post
 }
 
+// commit
+
 function Post({ post }: Props) {
   return (
     <>
