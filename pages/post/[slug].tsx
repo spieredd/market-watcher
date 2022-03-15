@@ -63,7 +63,7 @@ function Post({ post }: Props) {
           <h2 className="mb-2 text-xl font-light text-gray-500">
             {post.description}
           </h2>
-          <div className="flex items-center space-x-2">
+          <div className="flex items-center space-x-2 mb-5">
             <img
               className="h-10 w-10 rounded-full"
               src={urlFor(post.author.image).url()!}
@@ -75,7 +75,8 @@ function Post({ post }: Props) {
               Published at {new Date(post._createdAt).toLocaleString()}
             </p>
           </div>
-          <div className="my-50">
+          <span className="py-10"></span>
+          <div className="my-50 mt-10s">
             <BlockContent
               blocks={post.body}
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}

@@ -41,6 +41,7 @@ var block_content_to_react_default = /*#__PURE__*/__webpack_require__.n(block_co
 
 
 
+// commit
 function Post({ post  }) {
     return(/*#__PURE__*/ (0,jsx_runtime_.jsxs)(jsx_runtime_.Fragment, {
         children: [
@@ -51,7 +52,7 @@ function Post({ post  }) {
                         children: [
                             /*#__PURE__*/ jsx_runtime_.jsx("title", {
                                 className: "jsx-403dcb1465745b19",
-                                children: "Market Watcher - Financial News"
+                                /*#__PURE__*/ children: "Market Watcher - Financial News"
                             }),
                             /*#__PURE__*/ jsx_runtime_.jsx("link", {
                                 rel: "icon",
@@ -141,7 +142,7 @@ function Post({ post  }) {
                                         children: post.description
                                     }),
                                     /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                        className: "jsx-403dcb1465745b19" + " " + "flex items-center space-x-2",
+                                        className: "jsx-403dcb1465745b19" + " " + "flex items-center space-x-2 mb-5",
                                         children: [
                                             /*#__PURE__*/ jsx_runtime_.jsx("img", {
                                                 src: (0,sanity/* urlFor */.uH)(post.author.image).url(),
@@ -163,8 +164,11 @@ function Post({ post  }) {
                                             })
                                         ]
                                     }),
+                                    /*#__PURE__*/ jsx_runtime_.jsx("span", {
+                                        className: "jsx-403dcb1465745b19" + " " + "py-10"
+                                    }),
                                     /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                        className: "jsx-403dcb1465745b19" + " " + "my-50",
+                                        className: "jsx-403dcb1465745b19" + " " + "my-50 mt-10s",
                                         children: [
                                             /*#__PURE__*/ jsx_runtime_.jsx((block_content_to_react_default()), {
                                                 blocks: post.body,
