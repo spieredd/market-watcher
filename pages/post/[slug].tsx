@@ -19,7 +19,7 @@ function Post({ post }: Props) {
     <div>
       <Head>
         <title>Market Watcher - Financial News</title>
-        <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <header className="mx-auto flex max-w-7xl justify-between p-5">
