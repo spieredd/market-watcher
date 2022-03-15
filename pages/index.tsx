@@ -113,12 +113,12 @@ const Home: NextPage = ({ posts }: any) => {
                               <span
                                 className={
                                   element.title === 'Tutorial'
-                                    ? 'mr-2 inline-block rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-gray-500'
+                                    ? 'mr-2 mt-2 inline-block rounded-full bg-green-100 px-3 py-1 text-sm font-semibold text-gray-500'
                                     : element.title === 'Ukraine'
-                                    ? 'mr-2 inline-block rounded-full bg-red-100 px-3 py-1 text-sm font-semibold text-gray-500'
+                                    ? 'mr-2 mt-2 inline-block rounded-full bg-red-100 px-3 py-1 text-sm font-semibold text-gray-500'
                                     : element.title === 'Crypto' || 'Finance'
-                                    ? 'mr-2 inline-block rounded-full bg-orange-100 px-3 py-1 text-sm font-semibold text-gray-500'
-                                    : 'mr-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-500'
+                                    ? 'mr-2 mt-2 inline-block rounded-full bg-orange-100 px-3 py-1 text-sm font-semibold text-gray-500'
+                                    : 'mr-2 mt-2 inline-block rounded-full bg-gray-200 px-3 py-1 text-sm font-semibold text-gray-500'
                                 }
                               >
                                 #{element.title}

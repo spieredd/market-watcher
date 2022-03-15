@@ -2,9 +2,10 @@ import { sanityClient, urlFor } from '../../sanity'
 import { Post } from '../../typings'
 import Header from '../../components/Header'
 import { GetStaticProps } from 'next'
-import PortableText from 'react-portable-text'
+// import PortableText from 'react-portable-text'
 import Link from 'next/link'
 import Head from 'next/head'
+import BlockContent from '@sanity/block-content-to-react';
 
 interface Props {
   post: Post
@@ -12,11 +13,11 @@ interface Props {
 
 function Post({ post }: Props) {
   return (
+    <>
     <div>
       <Head>
         <title>Market Watcher - Financial News</title>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="style.css" />
       </Head>
       <main>
         <header className="mx-auto flex max-w-7xl justify-between p-5">
@@ -73,28 +74,44 @@ function Post({ post }: Props) {
             </p>
           </div>
           <div className="my-50">
-            {/* <BlockContent
+            <BlockContent
               blocks={post.body}
               dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
               projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-            /> */}
+            />
             <p className="my-5 text-base body-text">
-              <PortableText
-                className="py-10"
-                dataset={process.env.NEXT_PUBLIC_SANITY_DATASET!}
-                projectId={process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}
-                content={post.body}
-                serializers={{
-                  p: (props: any) => {
-                    return(<p className="my-10" {...props}/>)
-                  },
-                }}
-              />
+            {/* <PortableText
+              dataset={process.env.NEXT_PUBLIC_SANITY_DATASET}
+              projectId={process.env.NEXT_PUBLIC_SANITY_PROJECTID}
+              content={post.body}
+              serializers={{
+                h1: (props: any) => (
+                  <h1 className="my-5 text-2xl font-bold" {...props}></h1>
+                ),
+                h2: (props: any) => (
+                  <h1 className="my-5 text-xl font-bold" {...props}></h1>
+                ),
+                li: ({ children }: any) => (
+                  <li className="ml-4 list-disc">{children}</li>
+                ),
+                link: ({ children, href }: any) => (
+                  <a href={href} className="text-blue-500 hover:underline">
+                    {children}
+                  </a>
+                ),
+              }}
+            /> */}
             </p>
           </div>
         </article>
       </main>
     </div>
+    <style jsx>{`
+    p:empty{
+      height:20px !important;
+    }
+  `}</style>
+  </>
   )
 }
 

@@ -1,3 +1,4 @@
-p.body-text div p{
-    color: red !important;
+p:empty{
+
+    height: 20px;
 }
