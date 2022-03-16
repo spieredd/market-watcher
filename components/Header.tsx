@@ -6,11 +6,15 @@ function header() {
     <header className="mx-auto flex max-w-7xl justify-between p-5">
       <div className="flex items-center space-x-5">
         <Link href="/">
+<<<<<<< Updated upstream
           <img
             className="h-10 w-44 cursor-pointer object-cover"
             src="logo-market-watcher.png"
             alt=""
           />
+=======
+          <h1 className="font-bold text-xl font-poppins cursor-pointer">Market Watcher</h1>
+>>>>>>> Stashed changes
         </Link>
         <div className="hidden items-center space-x-5 md:inline-flex">
           <Link href="/">
