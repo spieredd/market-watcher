@@ -6,7 +6,8 @@ function header() {
     <header className="mx-auto flex max-w-7xl justify-between p-5">
       <div className="flex items-center space-x-5">
         <Link href="/">
-          <h1 className="font-bold text-2xl">Market Watcher</h1>
+
+          <h1 className="font-bold text-xl font-poppins cursor-pointer">Market Watcher</h1>
         </Link>
         <div className="hidden items-center space-x-5 md:inline-flex">
           <Link href="/">
