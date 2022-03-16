@@ -40,12 +40,13 @@ const Home: NextPage = ({ posts }: any) => {
       <Head>
         <title>Market Watcher - Financial News</title>
         <link rel="icon" href="/favicon.ico" />
-        <Script
+        
+      </Head>
+      <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8424057093962720"
           crossOrigin="anonymous"
         ></Script>
-      </Head>
       <Header />
       <div className="flex items-center justify-between bg-gray-800 py-10 text-white lg:py-5">
         <div className="flex flex-row items-center px-5">
