@@ -4,7 +4,22 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'poppins': ['Poppins','serif']
+      },
+      colors: {
+        'gray': {
+          800: "#2B2B2B"
+        },
+        'green': {
+          200: '#E0FFB8'
+        },
+        'red': {
+          200: '#FFBDBD'
+        }
+      }
+    },
   },
   plugins: [],
 }
