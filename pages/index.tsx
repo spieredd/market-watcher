@@ -21,7 +21,6 @@ const Home: NextPage = ({ posts }: any) => {
   })
   let tutorials = posts.slice(posts.length - 3, posts.length).reverse()
   return (
-        style={{ background: '#2B373B' }}
     <>
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
