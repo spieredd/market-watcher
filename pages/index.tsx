@@ -69,7 +69,7 @@ const Home: NextPage = ({ posts }: any) => {
           <li>Investment</li>
           <li>Technology</li>
         </ul>
-        <section className="mt-5 flex items-start justify-between rounded bg-gray-800 px-10 py-7 text-white lg:p-10">
+        <section className="mt-5 flex items-center justify-between rounded bg-gray-800 px-10 py-7 text-white lg:p-10">
           <div className="w-100 lg:w-1/2">
             <h2 className="font-playfair text-4xl font-bold lg:text-5xl">
               {posts_sorted[0].title}
@@ -84,14 +84,21 @@ const Home: NextPage = ({ posts }: any) => {
               <p className="cursor-pointer underline">Continue reading...</p>
             </Link>
           </div>
-          <div className="border rounded border-opacity-50 px-2 border-gray-200">
+          <div className="flex justify-center items-center w-1/2 pl-20 pr-10 py-2">
+          <img
+              className="col-span-2 h-full rounded-r object-cover opacity-80"
+              src={urlFor(posts_sorted[0].mainImage).url()!}
+              alt=""
+            />
+            </div>
+          {/* <div className="border rounded border-opacity-50 px-2 border-gray-200">
             <p className="text-white">
               {new Date(posts_sorted[0]._createdAt).toLocaleString([], {
                 month: 'numeric',
                 day: 'numeric',
               })}
             </p>
-          </div>
+          </div> */}
         </section>
         <section className="mt-5 flex h-fit flex-col justify-center space-y-5 overflow-hidden lg:flex-row lg:justify-between lg:space-x-5 lg:space-y-0">
           <article className="grid h-fit w-full grid-cols-5 grid-rows-1 overflow-hidden rounded border">
