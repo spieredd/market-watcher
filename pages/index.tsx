@@ -69,7 +69,7 @@ const Home: NextPage = ({ posts }: any) => {
           <li>Investment</li>
           <li>Technology</li>
         </ul>
-        <section className="mt-5 flex items-center justify-between rounded bg-gray-800 px-10 py-7 text-white lg:p-10">
+        <section className="mt-5 flex items-center justify-between bg-yellow-200 px-10 py-7 text-gray-700 lg:p-10">
           <div className="w-100 lg:w-1/2">
             <h2 className="font-playfair text-4xl font-bold lg:text-5xl">
               {posts_sorted[0].title}
@@ -86,7 +86,7 @@ const Home: NextPage = ({ posts }: any) => {
           </div>
           <div className="flex justify-center items-center w-1/2 pl-20 pr-10 py-2">
           <img
-              className="col-span-2 h-full rounded-r object-cover opacity-80"
+              className="col-span-2 h-full object-cover opacity-80"
               src={urlFor(posts_sorted[0].mainImage).url()!}
               alt=""
             />
@@ -101,8 +101,8 @@ const Home: NextPage = ({ posts }: any) => {
           </div> */}
         </section>
         <section className="mt-5 flex h-fit flex-col justify-center space-y-5 overflow-hidden lg:flex-row lg:justify-between lg:space-x-5 lg:space-y-0">
-          <article className="grid h-fit w-full grid-cols-5 grid-rows-1 overflow-hidden rounded border">
-            <div className="col-span-3 p-10">
+        <article className=" h-fit w-full flex flex-row  justify-between items-center border-gray-800 p-10 space-x-5">
+            <div className="">
               <Link href="/">
                 <p className="cursor-pointer font-bold text-blue-600">World</p>
               </Link>
@@ -126,13 +126,13 @@ const Home: NextPage = ({ posts }: any) => {
             </div>
 
             <img
-              className="col-span-2 h-full w-60 rounded-r object-cover"
+              className="h-full w-1/2 flex-auto object-cover"
               src={urlFor(posts_sorted[1].mainImage).url()!}
               alt=""
             />
           </article>
-          <article className="grid h-fit w-full grid-cols-5 grid-rows-1 rounded border">
-            <div className="col-span-3 p-10">
+          <article className=" h-fit w-full flex flex-row  justify-between items-center border-gray-800 p-10 space-x-5">
+            <div className="">
               <Link href="/">
                 <p className="cursor-pointer font-bold text-blue-600">World</p>
               </Link>
@@ -156,7 +156,7 @@ const Home: NextPage = ({ posts }: any) => {
             </div>
 
             <img
-              className="col-span-2 h-full w-60 flex-auto rounded-r object-cover"
+              className="h-full w-1/2 flex-auto object-cover"
               src={urlFor(posts_sorted[2].mainImage).url()!}
               alt=""
             />
