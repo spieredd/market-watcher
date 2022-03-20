@@ -45,22 +45,23 @@ const Home: NextPage = ({ posts }: any) => {
           rel="stylesheet"
         />
       </Head>
-      <div className="px-5 lg:px-28">
+      <div className="border-b border-black bg-amber-200 px-10">
         <nav className="flex items-center justify-between pt-5 pb-3">
           <Link href="/">
-            <p className="cursor-pointer text-gray-500 underline">Suscribe</p>
+            <p className="cursor-pointer text-gray-800 underline">Suscribe</p>
           </Link>
           <h1 className="font-playfair text-3xl font-bold text-gray-800">
             Market Watcher
           </h1>
           <Link href="/">
-            <button className="cursor-pointer rounded border px-4 py-2 text-gray-500">
+            <button className="cursor-pointer rounded border border-gray-400 px-4 py-2 text-gray-700">
               Sign up
             </button>
           </Link>
         </nav>
-        <hr />
-        <ul className="invisible flex cursor-pointer flex-row items-center justify-between pt-0 text-xs text-gray-500 underline lg:visible lg:pt-2 lg:text-base">
+      </div>
+      <div className="px-10 bg-amber-200 border-b border-black">
+        <ul className="invisible flex cursor-pointer flex-row items-center justify-between pt-0 text-xs text-gray-600 underline lg:visible lg:pt-2 lg:text-base">
           <li>World</li>
           <li>Finance</li>
           <li>Business</li>
@@ -69,7 +70,8 @@ const Home: NextPage = ({ posts }: any) => {
           <li>Investment</li>
           <li>Technology</li>
         </ul>
-        <section className="mt-5 flex items-center justify-between bg-yellow-200 px-10 py-7 text-gray-700 lg:p-10">
+
+        <section className="mt-5 flex items-center justify-between px-10 py-7 text-gray-700 lg:p-10">
           <div className="w-100 lg:w-1/2">
             <h2 className="font-playfair text-4xl font-bold lg:text-5xl">
               {posts_sorted[0].title}
@@ -84,13 +86,13 @@ const Home: NextPage = ({ posts }: any) => {
               <p className="cursor-pointer underline">Continue reading...</p>
             </Link>
           </div>
-          <div className="flex justify-center items-center w-1/2 pl-20 pr-10 py-2">
-          <img
+          <div className="flex w-1/2 items-center justify-center py-2 pl-20 pr-10">
+            <img
               className="col-span-2 h-full object-cover opacity-80"
               src={urlFor(posts_sorted[0].mainImage).url()!}
               alt=""
             />
-            </div>
+          </div>
           {/* <div className="border rounded border-opacity-50 px-2 border-gray-200">
             <p className="text-white">
               {new Date(posts_sorted[0]._createdAt).toLocaleString([], {
@@ -100,8 +102,10 @@ const Home: NextPage = ({ posts }: any) => {
             </p>
           </div> */}
         </section>
+      </div>
+      <div className="px-10">
         <section className="mt-5 flex h-fit flex-col justify-center space-y-5 overflow-hidden lg:flex-row lg:justify-between lg:space-x-5 lg:space-y-0">
-        <article className=" h-fit w-full flex flex-row  justify-between items-center border-gray-800 p-10 space-x-5">
+          <article className=" flex h-fit w-full flex-row  items-center justify-between space-x-5 border-gray-800 p-10">
             <div className="">
               <Link href="/">
                 <p className="cursor-pointer font-bold text-blue-600">World</p>
@@ -131,7 +135,7 @@ const Home: NextPage = ({ posts }: any) => {
               alt=""
             />
           </article>
-          <article className=" h-fit w-full flex flex-row  justify-between items-center border-gray-800 p-10 space-x-5">
+          <article className=" flex h-fit w-full flex-row  items-center justify-between space-x-5 border-gray-800 p-10">
             <div className="">
               <Link href="/">
                 <p className="cursor-pointer font-bold text-blue-600">World</p>
