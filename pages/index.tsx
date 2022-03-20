@@ -69,7 +69,7 @@ const Home: NextPage = ({ posts }: any) => {
           <li>Investment</li>
           <li>Technology</li>
         </ul>
-        <section className="mt-5 rounded bg-gray-800 px-10 py-7 text-white lg:p-10 ">
+        <section className="mt-5 flex items-start justify-between rounded bg-gray-800 px-10 py-7 text-white lg:p-10">
           <div className="w-100 lg:w-1/2">
             <h2 className="font-playfair text-4xl font-bold lg:text-5xl">
               {posts_sorted[0].title}
@@ -84,10 +84,18 @@ const Home: NextPage = ({ posts }: any) => {
               <p className="cursor-pointer underline">Continue reading...</p>
             </Link>
           </div>
+          <div className="border rounded border-opacity-50 px-2 border-gray-200">
+            <p className="text-white">
+              {new Date(posts_sorted[0]._createdAt).toLocaleString([], {
+                month: 'numeric',
+                day: 'numeric',
+              })}
+            </p>
+          </div>
         </section>
-        <section className="mt-5 flex flex-col justify-center space-y-5 lg:flex-row lg:justify-between lg:space-x-5 lg:space-y-0 overflow-hidden h-fit">
-        <article className="grid grid-cols-5 grid-rows-1 w-full rounded border h-fit overflow-hidden">
-            <div className="p-10 col-span-3">
+        <section className="mt-5 flex h-fit flex-col justify-center space-y-5 overflow-hidden lg:flex-row lg:justify-between lg:space-x-5 lg:space-y-0">
+          <article className="grid h-fit w-full grid-cols-5 grid-rows-1 overflow-hidden rounded border">
+            <div className="col-span-3 p-10">
               <Link href="/">
                 <p className="cursor-pointer font-bold text-blue-600">World</p>
               </Link>
@@ -109,15 +117,15 @@ const Home: NextPage = ({ posts }: any) => {
                 </p>
               </Link>
             </div>
-            
+
             <img
-              className="h-full w-60 object-cover col-span-2 rounded-r"
+              className="col-span-2 h-full w-60 rounded-r object-cover"
               src={urlFor(posts_sorted[1].mainImage).url()!}
               alt=""
             />
           </article>
-          <article className="grid grid-cols-5 grid-rows-1 w-full rounded border h-fit">
-            <div className="p-10 col-span-3">
+          <article className="grid h-fit w-full grid-cols-5 grid-rows-1 rounded border">
+            <div className="col-span-3 p-10">
               <Link href="/">
                 <p className="cursor-pointer font-bold text-blue-600">World</p>
               </Link>
@@ -139,9 +147,9 @@ const Home: NextPage = ({ posts }: any) => {
                 </p>
               </Link>
             </div>
-            
+
             <img
-              className="h-full flex-auto w-60 object-cover col-span-2 rounded-r"
+              className="col-span-2 h-full w-60 flex-auto rounded-r object-cover"
               src={urlFor(posts_sorted[2].mainImage).url()!}
               alt=""
             />
