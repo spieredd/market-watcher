@@ -19,7 +19,8 @@ const Home: NextPage = ({ posts }: any) => {
       dateB: any = new Date(b._createdAt)
     return dateA - dateB
   })
-  let tutorials = posts.slice(posts.length - 3, posts.length).reverse()
+  let posts_sorted = posts.slice(posts.length - 3, posts.length).reverse()
+  console.log(posts_sorted)
   return (
     <>
       <Head>
@@ -33,8 +34,293 @@ const Home: NextPage = ({ posts }: any) => {
           href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet"
         />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true "
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet"
+        />
       </Head>
-      <div className="bg-white font-poppins">
+      <div className="px-5 lg:px-28">
+        <nav className="flex items-center justify-between pt-5 pb-3">
+          <Link href="/">
+            <p className="cursor-pointer text-gray-500 underline">Suscribe</p>
+          </Link>
+          <h1 className="font-playfair text-3xl font-bold text-gray-800">
+            Market Watcher
+          </h1>
+          <Link href="/">
+            <button className="cursor-pointer rounded border px-4 py-2 text-gray-500">
+              Sign up
+            </button>
+          </Link>
+        </nav>
+        <hr />
+        <ul className="invisible flex cursor-pointer flex-row items-center justify-between pt-0 text-xs text-gray-500 underline lg:visible lg:pt-2 lg:text-base">
+          <li>World</li>
+          <li>Finance</li>
+          <li>Business</li>
+          <li>Geopolitics</li>
+          <li>Geography</li>
+          <li>Investment</li>
+          <li>Technology</li>
+        </ul>
+        <section className="mt-5 rounded bg-gray-800 px-10 py-7 text-white lg:p-10 ">
+          <div className="w-100 lg:w-1/2">
+            <h2 className="font-playfair text-4xl font-bold lg:text-5xl">
+              {posts_sorted[0].title}
+            </h2>
+            <h3 className="py-5 text-sm lg:text-base">
+              {posts_sorted[0].description}
+            </h3>
+            <Link
+              key={posts_sorted[0]._id}
+              href={`/post/${posts_sorted[0].slug.current}`}
+            >
+              <p className="cursor-pointer underline">Continue reading...</p>
+            </Link>
+          </div>
+        </section>
+        <section className="mt-5 flex flex-col justify-center space-y-5 lg:flex-row lg:justify-between lg:space-x-5 lg:space-y-0 overflow-hidden h-fit">
+        <article className="grid grid-cols-5 grid-rows-1 w-full rounded border h-fit overflow-hidden">
+            <div className="p-10 col-span-3">
+              <Link href="/">
+                <p className="cursor-pointer font-bold text-blue-600">World</p>
+              </Link>
+              <h2 className="text-2xl font-bold">{posts_sorted[1].title}</h2>
+              <p className="text-gray-500">
+                {new Date(posts_sorted[1]._createdAt).toLocaleString([], {
+                  month: 'numeric',
+                  day: 'numeric',
+                })}
+              </p>
+              <p>{posts_sorted[1].description}</p>
+
+              <Link
+                key={posts_sorted[1]._id}
+                href={`/post/${posts_sorted[1].slug.current}`}
+              >
+                <p className="cursor-pointer pt-5 text-blue-600 underline">
+                  Continue reading...
+                </p>
+              </Link>
+            </div>
+            
+            <img
+              className="h-full w-60 object-cover col-span-2 rounded-r"
+              src={urlFor(posts_sorted[1].mainImage).url()!}
+              alt=""
+            />
+          </article>
+          <article className="grid grid-cols-5 grid-rows-1 w-full rounded border h-fit">
+            <div className="p-10 col-span-3">
+              <Link href="/">
+                <p className="cursor-pointer font-bold text-blue-600">World</p>
+              </Link>
+              <h2 className="text-2xl font-bold">{posts_sorted[2].title}</h2>
+              <p className="text-gray-500">
+                {new Date(posts_sorted[2]._createdAt).toLocaleString([], {
+                  month: 'numeric',
+                  day: 'numeric',
+                })}
+              </p>
+              <p>{posts_sorted[2].description}</p>
+
+              <Link
+                key={posts_sorted[2]._id}
+                href={`/post/${posts_sorted[2].slug.current}`}
+              >
+                <p className="cursor-pointer pt-5 text-blue-600 underline">
+                  Continue reading...
+                </p>
+              </Link>
+            </div>
+            
+            <img
+              className="h-full flex-auto w-60 object-cover col-span-2 rounded-r"
+              src={urlFor(posts_sorted[2].mainImage).url()!}
+              alt=""
+            />
+          </article>
+        </section>
+        <section className=" mb-10 grid grid-cols-3 grid-rows-1 gap-x-5">
+          <div className="col-span-2 rounded">
+            <hr className="my-5" />
+            <h1 className="mb-5 font-playfair text-3xl font-bold">
+              Want to learn Economy ?
+            </h1>
+            <p className="pb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              maximus eros diam. Nam id massa tempor mauris dapibus bibendum. Ut
+              nisi tellus, rhoncus non nunc ornare, fringilla maximus velit. Ut
+              at lectus porta, pellentesque ex ac, pulvinar neque. Duis blandit
+              molestie felis, non vulputate nibh placerat sit amet. Fusce vel
+              massa eros. Nulla facilisi. Cras finibus rhoncus risus in
+              tristique. Nam efficitur, arcu vel vehicula posuere, neque lorem
+              convallis leo, nec pulvinar sapien orci vitae ante. Suspendisse
+              potenti. Morbi a risus neque. Curabitur in diam nec augue pulvinar
+              lobortis. Nam fermentum nunc in molestie consequat. Proin volutpat
+              ante mi, commodo malesuada orci consectetur at. Integer nec mi
+              pellentesque, dignissim lorem in, pulvinar tortor.
+            </p>
+            <p className="pb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              maximus eros diam. Nam id massa tempor mauris dapibus bibendum. Ut
+              nisi tellus, rhoncus non nunc ornare, fringilla maximus velit. Ut
+              at lectus porta, pellentesque ex ac, pulvinar neque. Duis blandit
+              molestie felis, non vulputate nibh placerat sit amet. Fusce vel
+              massa eros. Nulla facilisi. Cras finibus rhoncus risus in
+              tristique. Nam efficitur, arcu vel vehicula posuere, neque lorem
+              convallis leo, nec pulvinar sapien orci vitae ante. Suspendisse
+              potenti. Morbi a risus neque. Curabitur in diam nec augue pulvinar
+              lobortis. Nam fermentum nunc in molestie consequat. Proin volutpat
+              ante mi, commodo malesuada orci consectetur at. Integer nec mi
+              pellentesque, dignissim lorem in, pulvinar tortor.
+            </p>
+            <p className="pb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              maximus eros diam. Nam id massa tempor mauris dapibus bibendum. Ut
+              nisi tellus, rhoncus non nunc ornare, fringilla maximus velit. Ut
+              at lectus porta, pellentesque ex ac, pulvinar neque. Duis blandit
+              molestie felis, non vulputate nibh placerat sit amet. Fusce vel
+              massa eros. Nulla facilisi. Cras finibus rhoncus risus in
+              tristique. Nam efficitur, arcu vel vehicula posuere, neque lorem
+              convallis leo, nec pulvinar sapien orci vitae ante. Suspendisse
+              potenti. Morbi a risus neque. Curabitur in diam nec augue pulvinar
+              lobortis. Nam fermentum nunc in molestie consequat. Proin volutpat
+              ante mi, commodo malesuada orci consectetur at. Integer nec mi
+              pellentesque, dignissim lorem in, pulvinar tortor.
+            </p>
+            <p className="pb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              maximus eros diam. Nam id massa tempor mauris dapibus bibendum. Ut
+              nisi tellus, rhoncus non nunc ornare, fringilla maximus velit. Ut
+              at lectus porta, pellentesque ex ac, pulvinar neque. Duis blandit
+              molestie felis, non vulputate nibh placerat sit amet. Fusce vel
+              massa eros. Nulla facilisi. Cras finibus rhoncus risus in
+              tristique. Nam efficitur, arcu vel vehicula posuere, neque lorem
+              convallis leo, nec pulvinar sapien orci vitae ante. Suspendisse
+              potenti. Morbi a risus neque. Curabitur in diam nec augue pulvinar
+              lobortis. Nam fermentum nunc in molestie consequat. Proin volutpat
+              ante mi, commodo malesuada orci consectetur at. Integer nec mi
+              pellentesque, dignissim lorem in, pulvinar tortor.
+            </p>
+            <p className="pb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              maximus eros diam. Nam id massa tempor mauris dapibus bibendum. Ut
+              nisi tellus, rhoncus non nunc ornare, fringilla maximus velit. Ut
+              at lectus porta, pellentesque ex ac, pulvinar neque. Duis blandit
+              molestie felis, non vulputate nibh placerat sit amet. Fusce vel
+              massa eros. Nulla facilisi. Cras finibus rhoncus risus in
+              tristique. Nam efficitur, arcu vel vehicula posuere, neque lorem
+              convallis leo, nec pulvinar sapien orci vitae ante. Suspendisse
+              potenti. Morbi a risus neque. Curabitur in diam nec augue pulvinar
+              lobortis. Nam fermentum nunc in molestie consequat. Proin volutpat
+              ante mi, commodo malesuada orci consectetur at. Integer nec mi
+              pellentesque, dignissim lorem in, pulvinar tortor.
+            </p>
+            <p className="pb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              maximus eros diam. Nam id massa tempor mauris dapibus bibendum. Ut
+              nisi tellus, rhoncus non nunc ornare, fringilla maximus velit. Ut
+              at lectus porta, pellentesque ex ac, pulvinar neque. Duis blandit
+              molestie felis, non vulputate nibh placerat sit amet. Fusce vel
+              massa eros. Nulla facilisi. Cras finibus rhoncus risus in
+              tristique. Nam efficitur, arcu vel vehicula posuere, neque lorem
+              convallis leo, nec pulvinar sapien orci vitae ante. Suspendisse
+              potenti. Morbi a risus neque. Curabitur in diam nec augue pulvinar
+              lobortis. Nam fermentum nunc in molestie consequat. Proin volutpat
+              ante mi, commodo malesuada orci consectetur at. Integer nec mi
+              pellentesque, dignissim lorem in, pulvinar tortor.
+            </p>
+            <p className="pb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              maximus eros diam. Nam id massa tempor mauris dapibus bibendum. Ut
+              nisi tellus, rhoncus non nunc ornare, fringilla maximus velit. Ut
+              at lectus porta, pellentesque ex ac, pulvinar neque. Duis blandit
+              molestie felis, non vulputate nibh placerat sit amet. Fusce vel
+              massa eros. Nulla facilisi. Cras finibus rhoncus risus in
+              tristique. Nam efficitur, arcu vel vehicula posuere, neque lorem
+              convallis leo, nec pulvinar sapien orci vitae ante. Suspendisse
+              potenti. Morbi a risus neque. Curabitur in diam nec augue pulvinar
+              lobortis. Nam fermentum nunc in molestie consequat. Proin volutpat
+              ante mi, commodo malesuada orci consectetur at. Integer nec mi
+              pellentesque, dignissim lorem in, pulvinar tortor.
+            </p>
+            <p className="pb-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+              maximus eros diam. Nam id massa tempor mauris dapibus bibendum. Ut
+              nisi tellus, rhoncus non nunc ornare, fringilla maximus velit. Ut
+              at lectus porta, pellentesque ex ac, pulvinar neque. Duis blandit
+              molestie felis, non vulputate nibh placerat sit amet. Fusce vel
+              massa eros. Nulla facilisi. Cras finibus rhoncus risus in
+              tristique. Nam efficitur, arcu vel vehicula posuere, neque lorem
+              convallis leo, nec pulvinar sapien orci vitae ante. Suspendisse
+              potenti. Morbi a risus neque. Curabitur in diam nec augue pulvinar
+              lobortis. Nam fermentum nunc in molestie consequat. Proin volutpat
+              ante mi, commodo malesuada orci consectetur at. Integer nec mi
+              pellentesque, dignissim lorem in, pulvinar tortor.
+            </p>
+          </div>
+          <div className="top-0 mt-5">
+            <div className="sticky top-5 col-span-1 flex flex-col items-center justify-start">
+              <div className="w-full rounded bg-gray-100 p-5">
+                <h3 className="mb-2 font-playfair text-xl font-bold italic text-gray-800">
+                  About
+                </h3>
+                <p>
+                  Customize this section to tell your visitors a little bit
+                  about your publication, writers, content, or something else
+                  entirely. Totally up to you.
+                </p>
+              </div>
+              <div className="mt-5 w-full rounded border p-5">
+                <h3 className="font-playfair text-xl font-bold text-gray-800">
+                  Search
+                </h3>
+                <p className="text-normal text-gray-500">
+                  Search the name of any articles
+                </p>
+                <hr className="mt-2 mb-4" />
+                <input className="rounded border py-2 px-5" type="text" />
+                <button className="ml-2 rounded border py-2 px-5 text-gray-700">
+                  Search
+                </button>
+              </div>
+              <div className="mt-5 w-full rounded p-5">
+                <h3 className="mb-5 font-playfair text-xl font-bold italic text-gray-800">
+                  Archives
+                </h3>
+                <ul className="text-normal text-blue-700 underline">
+                  <li>March 2022</li>
+                  <li>February 2022</li>
+                  <li>January 2022</li>
+                  <li>December 2022</li>
+                </ul>
+              </div>
+              <div className="mt-5 w-full rounded p-5">
+                <h3 className="mb-5 font-playfair text-xl font-bold italic text-gray-800">
+                  Contact
+                </h3>
+                <ul className="text-normal text-blue-700 underline">
+                  <li>Github</li>
+                  <li>Instagram</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <footer className="flex w-full items-center justify-center border-t-2 bg-gray-100 py-16">
+        <h3 className="cursor-pointer text-xl text-blue-600 underline">
+          Footer
+        </h3>
+      </footer>
+      {/* <div className="bg-white font-poppins">
         <div className="bg-gray-800 opacity-90 fixed top-0 left-0 right-0">
           <ul className="flex flex-row items-center justify-between px-40 py-3">
             <li>
@@ -215,6 +501,7 @@ const Home: NextPage = ({ posts }: any) => {
           </main>
         </div>
       </div>
+    </> */}
     </>
     // <div className="mx-auto max-w-7xl">
     //   <CookieConsent

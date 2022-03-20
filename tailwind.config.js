@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        'poppins': ['Poppins','serif']
+        'poppins': ['Poppins', 'serif'],
+        'playfair': ['Playfair Display','serif']
       },
       colors: {
         'gray': {
