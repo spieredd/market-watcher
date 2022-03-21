@@ -44,8 +44,8 @@ const Home: NextPage = ({ posts }: any) => {
           href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
           rel="stylesheet"
         />
+        <title>Market Watcher - Economic Daily News</title>
       </Head>
-
       <div className="border-b border-black bg-amber-200 px-20">
         <nav className="flex items-center justify-between pt-5 pb-3">
           <Link href="/">
@@ -55,7 +55,7 @@ const Home: NextPage = ({ posts }: any) => {
             Market Watcher
           </h1>
           <Link href="/">
-            <button className="cursor-pointer rounded border border-gray-700 px-2 py-1 text-gray-700">
+            <button className="cursor-pointer rounded border border-gray-700 px-2 py-1 text-gray-700 duration-300 ease-in-out hover:bg-gray-600 hover:text-white">
               Sign up
             </button>
           </Link>
@@ -104,68 +104,64 @@ const Home: NextPage = ({ posts }: any) => {
           </div> */}
         </section>
       </div>
-      <div className="px-10">
-        <section className="mt-5 flex h-fit flex-col justify-center space-y-5 overflow-hidden lg:flex-row lg:justify-between lg:space-x-5 lg:space-y-0">
-          <article className="flex h-fit w-full flex-row items-center  justify-between space-x-5 border-gray-800 p-10 py-5">
-            <div className="">
-              <Link href="/">
-                <p className="cursor-pointer font-bold text-blue-600">World</p>
-              </Link>
-              <h2 className="text-2xl font-bold">{posts_sorted[1].title}</h2>
-              <p className="text-gray-500">
-                {new Date(posts_sorted[1]._createdAt).toLocaleString([], {
-                  month: 'numeric',
-                  day: 'numeric',
-                })}
-              </p>
-              <p>{posts_sorted[1].description}</p>
-
-              <Link
-                key={posts_sorted[1]._id}
-                href={`/post/${posts_sorted[1].slug.current}`}
-              >
-                <p className="cursor-pointer pt-5 text-blue-600 underline">
-                  Continue reading...
+      <div className="bg-white px-10 text-gray-800">
+        <section className="flex h-fit flex-col justify-center space-y-5 overflow-hidden pt-5 pb-5 lg:flex-row lg:justify-between lg:space-x-5 lg:space-y-0">
+          <Link
+            key={posts_sorted[1]._id}
+            href={`/post/${posts_sorted[1].slug.current}`}
+          >
+            <article className="flex h-fit w-full cursor-pointer flex-row items-center  justify-between space-x-5 border-gray-800 p-10 py-5">
+              <div className="">
+                <Link href="/">
+                  <p className="cursor-pointer font-bold text-blue-600">
+                    World
+                  </p>
+                </Link>
+                <h2 className="text-2xl font-bold">{posts_sorted[1].title}</h2>
+                <p className="text-gray-500">
+                  {new Date(posts_sorted[1]._createdAt).toLocaleString([], {
+                    month: 'numeric',
+                    day: 'numeric',
+                  })}
                 </p>
-              </Link>
-            </div>
+                <p>{posts_sorted[1].description}</p>
+              </div>
 
-            <img
-              className="h-40 w-60 flex-auto object-cover"
-              src={urlFor(posts_sorted[1].mainImage).url()!}
-              alt=""
-            />
-          </article>
-          <article className="flex h-fit w-full flex-row items-center  justify-between space-x-5 border-gray-800 p-10 py-5">
-            <div className="">
-              <Link href="/">
-                <p className="cursor-pointer font-bold text-blue-600">World</p>
-              </Link>
-              <h2 className="text-2xl font-bold">{posts_sorted[2].title}</h2>
-              <p className="text-gray-500">
-                {new Date(posts_sorted[2]._createdAt).toLocaleString([], {
-                  month: 'numeric',
-                  day: 'numeric',
-                })}
-              </p>
-              <p>{posts_sorted[2].description}</p>
-
-              <Link
-                key={posts_sorted[2]._id}
-                href={`/post/${posts_sorted[2].slug.current}`}
-              >
-                <p className="cursor-pointer pt-5 text-blue-600 underline">
-                  Continue reading...
+              <img
+                className="h-40 w-60 flex-auto object-cover"
+                src={urlFor(posts_sorted[1].mainImage).url()!}
+                alt=""
+              />
+            </article>
+          </Link>
+          <Link
+            key={posts_sorted[2]._id}
+            href={`/post/${posts_sorted[2].slug.current}`}
+          >
+            <article className="flex h-fit w-full cursor-pointer flex-row items-center  justify-between space-x-5 border-gray-800 p-10 py-5">
+              <div className="">
+                <Link href="/">
+                  <p className="cursor-pointer font-bold text-blue-600">
+                    World
+                  </p>
+                </Link>
+                <h2 className="text-2xl font-bold">{posts_sorted[2].title}</h2>
+                <p className="text-gray-500">
+                  {new Date(posts_sorted[2]._createdAt).toLocaleString([], {
+                    month: 'numeric',
+                    day: 'numeric',
+                  })}
                 </p>
-              </Link>
-            </div>
+                <p>{posts_sorted[2].description}</p>
+              </div>
 
-            <img
-              className="h-40 w-60 flex-auto object-cover"
-              src={urlFor(posts_sorted[2].mainImage).url()!}
-              alt=""
-            />
-          </article>
+              <img
+                className="h-40 w-60 flex-auto object-cover"
+                src={urlFor(posts_sorted[2].mainImage).url()!}
+                alt=""
+              />
+            </article>
+          </Link>
         </section>
 
         <section className="flex h-fit flex-row items-start justify-center space-y-5 overflow-hidden lg:flex-row lg:justify-between lg:space-x-5 lg:space-y-0">
@@ -270,13 +266,37 @@ const Home: NextPage = ({ posts }: any) => {
             </article>
           </section>
         </section>
+        <section className="grid w-full	grid-cols-3 grid-rows-1 gap-x-5">
+          <Link href="/">
+            <div className="col-span-2 my-5 grid cursor-pointer grid-cols-10 grid-rows-1 items-center justify-center gap-x-5 pl-10">
+              <div className="col-span-4 flex flex-col items-center justify-center">
+                <h2 className="mb-4 text-2xl font-bold text-gray-700">
+                  What is economy ?
+                </h2>
+                <p className="mb-2 text-center text-gray-800">
+                  An economy is the large set of inter-related production and
+                  consumption activities that...
+                </p>
+                <p className="text-center text-xs text-gray-500">
+                  Learn about economy with this crash course created by experts at Market Watcher
+                </p>
+              </div>
+              <img
+                className="h-100 col-span-6 w-full overflow-hidden object-cover"
+                src="https://www.ft.com/__origami/service/image/v2/images/raw/https%3A%2F%2Fd1e00ek4ebabms.cloudfront.net%2Fproduction%2F1fb3e698-8078-47a7-b6c9-b1d4d7109457.jpg?source=next-home-page&dpr=2&width=580&height=435&fit=cover&gravity=poi"
+                alt=""
+              />
+            </div>
+          </Link>
+          <div className="col-span-1 border flex justify-center items-center">
+            <p className="font-semiBold text-xl">Ads</p>
+          </div>
+        </section>
 
         <section className=" mb-10 grid grid-cols-3 grid-rows-1 gap-x-5">
           <div className="col-span-2 rounded">
             <hr className="my-5" />
-            <h1 className="mb-5 font-playfair text-3xl font-bold">
-              Want to learn Economy ?
-            </h1>
+            <h1 className="mb-5 font-playfair text-3xl font-bold">About</h1>
             <p className="pb-5">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
               maximus eros diam. Nam id massa tempor mauris dapibus bibendum. Ut
@@ -441,7 +461,7 @@ const Home: NextPage = ({ posts }: any) => {
       </div>
       <footer className="flex w-full flex-col items-center justify-center border-t-2 bg-gray-100 py-16 text-gray-800">
         <Link href="https://www.buymeacoffee.com/marketwatcher">
-          <div className="cursor-pointer rounded-xl bg-green-400 px-4 py-1">
+          <div className="cursor-pointer rounded-xl bg-green-400 px-4 py-1 duration-200 ease-in-out hover:scale-105 hover:bg-green-500">
             <h3 className="text-normal font-poppins font-semibold">
               Buy me a coffee
             </h3>
