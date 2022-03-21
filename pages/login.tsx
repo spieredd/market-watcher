@@ -37,7 +37,7 @@ function login() {
         <div className="border-b border-black bg-amber-200 px-20">
           <nav className="flex items-center justify-between pt-5 pb-3">
             <Link href="/">
-              <p className="cursor-pointer text-gray-900 underline">Suscribe</p>
+              <p className="cursor-pointer text-gray-900 underline mr-7">Suscribe</p>
             </Link>
             <Link href="/">
               <h1 className="cursor-pointer font-playfair text-3xl font-bold text-gray-900">
