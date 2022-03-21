@@ -45,17 +45,17 @@ const Home: NextPage = ({ posts }: any) => {
           rel="stylesheet"
         />
       </Head>
-      
+
       <div className="border-b border-black bg-amber-200 px-20">
         <nav className="flex items-center justify-between pt-5 pb-3">
           <Link href="/">
-            <p className="cursor-pointer text-gray-800 underline">Suscribe</p>
+            <p className="cursor-pointer text-gray-700 underline">Suscribe</p>
           </Link>
           <h1 className="font-playfair text-3xl font-bold text-gray-600">
             Market Watcher
           </h1>
           <Link href="/">
-            <button className="cursor-pointer rounded border border-gray-400 px-4 py-2 text-gray-700">
+            <button className="cursor-pointer rounded border border-gray-700 px-2 py-1 text-gray-700">
               Sign up
             </button>
           </Link>
@@ -71,9 +71,8 @@ const Home: NextPage = ({ posts }: any) => {
           <li>Investment</li>
           <li>Technology</li>
         </ul>
-   
+
         <section className="mx-10 mt-5 flex items-center justify-between py-7 text-gray-700 lg:p-10">
-          
           <div className="w-100 lg:w-1/2">
             <h2 className="font-playfair text-4xl font-bold lg:text-5xl">
               {posts_sorted[0].title}
@@ -172,7 +171,7 @@ const Home: NextPage = ({ posts }: any) => {
         <section className="flex h-fit flex-row items-start justify-center space-y-5 overflow-hidden lg:flex-row lg:justify-between lg:space-x-5 lg:space-y-0">
           <article className="flex h-fit w-full cursor-pointer flex-row  items-center justify-between space-x-5 border-gray-800 p-10 py-5">
             <div className="">
-              <div className="h-40 mb-4">
+              <div className="mb-4 h-40">
                 <img
                   className="col-span-2 h-full w-full object-cover opacity-80"
                   src={urlFor(posts_sorted[3].mainImage).url()!}
@@ -194,7 +193,7 @@ const Home: NextPage = ({ posts }: any) => {
           </article>
           <article className="flex h-fit w-full cursor-pointer flex-row  items-center justify-between space-x-5 border-gray-800 p-10 py-5">
             <div className="">
-            <div className="h-40 mb-4">
+              <div className="mb-4 h-40">
                 <img
                   className="col-span-2 h-full w-full object-cover opacity-80"
                   src={urlFor(posts_sorted[4].mainImage).url()!}
@@ -440,10 +439,22 @@ const Home: NextPage = ({ posts }: any) => {
           </div>
         </section>
       </div>
-      <footer className="flex w-full items-center justify-center border-t-2 bg-gray-100 py-16">
-        <h3 className="cursor-pointer text-xl text-blue-600 underline">
-          Footer
-        </h3>
+      <footer className="flex w-full flex-col items-center justify-center border-t-2 bg-gray-100 py-16 text-gray-800">
+        <Link href="https://www.buymeacoffee.com/marketwatcher">
+          <div className="cursor-pointer rounded-xl bg-green-400 px-4 py-1">
+            <h3 className="text-normal font-poppins font-semibold">
+              Buy me a coffee
+            </h3>
+          </div>
+        </Link>
+        <div className="my-2">
+          <p>---</p>
+        </div>
+        <div>
+          <p>
+            Copyright 2022 - <span className="font-bold">Market-Watcher</span>
+          </p>
+        </div>
       </footer>
       {/* <div className="bg-white font-poppins">
         <div className="bg-gray-800 opacity-90 fixed top-0 left-0 right-0">
