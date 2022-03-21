@@ -51,17 +51,20 @@ const Home: NextPage = ({ posts }: any) => {
           <Link href="/">
             <p className="cursor-pointer text-gray-700 underline">Suscribe</p>
           </Link>
-          <h1 className="font-playfair text-3xl font-bold text-gray-600">
-            Market Watcher
-          </h1>
           <Link href="/">
-            <button className="cursor-pointer rounded border border-gray-700 px-2 py-1 text-gray-700 duration-300 ease-in-out hover:bg-gray-600 hover:text-white">
+            <h1 className="cursor-pointer font-playfair text-3xl font-bold text-gray-600">
+              Market Watcher
+            </h1>
+          </Link>
+          <Link href="/">
+            <button className="rounded border border-gray-700 px-2 py-1 text-gray-700 duration-300 ease-in-out hover:bg-gray-600 hover:text-white">
               Sign up
             </button>
           </Link>
         </nav>
       </div>
-      <div className="border-b border-black bg-amber-200 px-10">
+
+      <div className=" border-b border-black bg-amber-200 px-10">
         <ul className="invisible mx-10 flex cursor-pointer flex-row items-center justify-between pt-0 text-xs text-gray-600 underline lg:visible lg:pt-2 lg:text-base">
           <li>World</li>
           <li>Finance</li>
@@ -104,6 +107,54 @@ const Home: NextPage = ({ posts }: any) => {
           </div> */}
         </section>
       </div>
+
+      <div className="sticky px-20 top-0 right-0 z-50 w-full overflow-hidden border-b border-black bg-amber-200 py-2">
+        <ul className="flex w-full items-center justify-between text-xs">
+          <li>
+            NASDAQ
+            <span className="ml-1 rounded border border-green-600 px-1 text-green-600">
+              +0.14%
+            </span>
+          </li>
+          <li>
+            NYSE
+            <span className="ml-1 rounded border border-red-500 px-1 text-red-500">
+              -0,05%
+            </span>
+          </li>
+          <li>
+            SSE
+            <span className="ml-1 rounded border border-green-600 px-1 text-green-600">
+              +0.11%
+            </span>
+          </li>
+          <li>
+            SEHK
+            <span className="ml-1 rounded border border-green-600 px-1 text-green-600">
+              +0.12%
+            </span>
+          </li>
+          <li>
+            LSE
+            <span className="ml-1 rounded border border-red-500 px-1 text-red-500">
+              -0.16%
+            </span>
+          </li>
+          <li>
+            SZSE
+            <span className="ml-1 rounded border border-green-600 px-1 text-green-600">
+              +0.07%
+            </span>
+          </li>
+          <li>
+            TSX
+            <span className="ml-1 rounded border border-red-500 px-1 text-red-500">
+              -0.32%
+            </span>
+          </li>
+        </ul>
+      </div>
+
       <div className="bg-white px-10 text-gray-800">
         <section className="flex h-fit flex-col justify-center space-y-5 overflow-hidden pt-5 pb-5 lg:flex-row lg:justify-between lg:space-x-5 lg:space-y-0">
           <Link
@@ -267,18 +318,19 @@ const Home: NextPage = ({ posts }: any) => {
           </section>
         </section>
         <section className="grid w-full	grid-cols-3 grid-rows-1 gap-x-5">
-          <Link href="/">
+          <Link href="/post/economy">
             <div className="col-span-2 my-5 grid cursor-pointer grid-cols-10 grid-rows-1 items-center justify-center gap-x-5 pl-10">
               <div className="col-span-4 flex flex-col items-center justify-center">
                 <h2 className="mb-4 text-2xl font-bold text-gray-700">
-                  What is economy ?
+                  What is the economy ?
                 </h2>
                 <p className="mb-2 text-center text-gray-800">
                   An economy is the large set of inter-related production and
                   consumption activities that...
                 </p>
                 <p className="text-center text-xs text-gray-500">
-                  Learn about economy with this crash course created by experts at Market Watcher
+                  Learn about economy with this crash course created by experts
+                  at Market Watcher
                 </p>
               </div>
               <img
@@ -288,7 +340,7 @@ const Home: NextPage = ({ posts }: any) => {
               />
             </div>
           </Link>
-          <div className="col-span-1 border flex justify-center items-center">
+          <div className="col-span-1 flex items-center justify-center border">
             <p className="font-semiBold text-xl">Ads</p>
           </div>
         </section>
@@ -411,7 +463,7 @@ const Home: NextPage = ({ posts }: any) => {
             </p>
           </div>
           <div className="top-0 mt-5">
-            <div className="sticky top-5 col-span-1 flex flex-col items-center justify-start">
+            <div className="sticky top-12 col-span-1 flex flex-col items-center justify-start">
               <div className="w-full bg-gray-100 p-5">
                 <h3 className="mb-2 font-playfair text-xl font-bold italic text-gray-800">
                   About
