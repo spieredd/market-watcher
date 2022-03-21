@@ -19,7 +19,7 @@ const Home: NextPage = ({ posts }: any) => {
       dateB: any = new Date(b._createdAt)
     return dateA - dateB
   })
-  let posts_sorted = posts.slice(posts.length - 3, posts.length).reverse()
+  let posts_sorted = posts.reverse()
   console.log(posts_sorted)
   return (
     <>
@@ -45,12 +45,12 @@ const Home: NextPage = ({ posts }: any) => {
           rel="stylesheet"
         />
       </Head>
-      <div className="border-b border-black bg-amber-200 px-10">
+      <div className="border-b border-black bg-amber-200 px-20">
         <nav className="flex items-center justify-between pt-5 pb-3">
           <Link href="/">
             <p className="cursor-pointer text-gray-800 underline">Suscribe</p>
           </Link>
-          <h1 className="font-playfair text-3xl font-bold text-gray-800">
+          <h1 className="font-playfair text-3xl font-bold text-gray-600">
             Market Watcher
           </h1>
           <Link href="/">
@@ -60,8 +60,8 @@ const Home: NextPage = ({ posts }: any) => {
           </Link>
         </nav>
       </div>
-      <div className="px-10 bg-amber-200 border-b border-black">
-        <ul className="invisible flex cursor-pointer flex-row items-center justify-between pt-0 text-xs text-gray-600 underline lg:visible lg:pt-2 lg:text-base">
+      <div className="border-b border-black bg-amber-200 px-10">
+        <ul className="invisible mx-10 flex cursor-pointer flex-row items-center justify-between pt-0 text-xs text-gray-600 underline lg:visible lg:pt-2 lg:text-base">
           <li>World</li>
           <li>Finance</li>
           <li>Business</li>
@@ -71,7 +71,7 @@ const Home: NextPage = ({ posts }: any) => {
           <li>Technology</li>
         </ul>
 
-        <section className="mt-5 flex items-center justify-between px-10 py-7 text-gray-700 lg:p-10">
+        <section className="mx-10 mt-5 flex items-center justify-between py-7 text-gray-700 lg:p-10">
           <div className="w-100 lg:w-1/2">
             <h2 className="font-playfair text-4xl font-bold lg:text-5xl">
               {posts_sorted[0].title}
@@ -105,7 +105,7 @@ const Home: NextPage = ({ posts }: any) => {
       </div>
       <div className="px-10">
         <section className="mt-5 flex h-fit flex-col justify-center space-y-5 overflow-hidden lg:flex-row lg:justify-between lg:space-x-5 lg:space-y-0">
-          <article className=" flex h-fit w-full flex-row  items-center justify-between space-x-5 border-gray-800 p-10">
+          <article className="flex h-fit w-full flex-row items-center  justify-between space-x-5 border-gray-800 p-10 py-5">
             <div className="">
               <Link href="/">
                 <p className="cursor-pointer font-bold text-blue-600">World</p>
@@ -135,7 +135,7 @@ const Home: NextPage = ({ posts }: any) => {
               alt=""
             />
           </article>
-          <article className=" flex h-fit w-full flex-row  items-center justify-between space-x-5 border-gray-800 p-10">
+          <article className="flex h-fit w-full flex-row items-center  justify-between space-x-5 border-gray-800 p-10 py-5">
             <div className="">
               <Link href="/">
                 <p className="cursor-pointer font-bold text-blue-600">World</p>
@@ -166,6 +166,119 @@ const Home: NextPage = ({ posts }: any) => {
             />
           </article>
         </section>
+
+        <section className="flex h-fit flex-row items-start justify-center space-y-5 overflow-hidden lg:flex-row lg:justify-between lg:space-x-5 lg:space-y-0">
+          <article className=" flex h-fit w-full flex-row  items-center justify-between space-x-5 border-gray-800 p-10 py-5">
+            <div className="">
+              <Link href="/">
+                <p className="cursor-pointer font-bold text-blue-600">World</p>
+              </Link>
+              <h2 className="text-2xl font-bold">{posts_sorted[3].title}</h2>
+              <p className="text-gray-500">
+                {new Date(posts_sorted[3]._createdAt).toLocaleString([], {
+                  month: 'numeric',
+                  day: 'numeric',
+                })}
+              </p>
+              <p>{posts_sorted[3].description}</p>
+
+              <Link
+                key={posts_sorted[3]._id}
+                href={`/post/${posts_sorted[3].slug.current}`}
+              >
+                <p className="cursor-pointer pt-5 text-blue-600 underline">
+                  Continue reading...
+                </p>
+              </Link>
+            </div>
+          </article>
+          <article className=" flex h-fit w-full flex-row  items-center justify-between space-x-5 border-gray-800 p-10 py-5">
+            <div className="">
+              <Link href="/">
+                <p className="cursor-pointer font-bold text-blue-600">World</p>
+              </Link>
+              <h2 className="text-2xl font-bold">{posts_sorted[4].title}</h2>
+              <p className="text-gray-500">
+                {new Date(posts_sorted[4]._createdAt).toLocaleString([], {
+                  month: 'numeric',
+                  day: 'numeric',
+                })}
+              </p>
+              <p>{posts_sorted[4].description}</p>
+
+              <Link
+                key={posts_sorted[4]._id}
+                href={`/post/${posts_sorted[4].slug.current}`}
+              >
+                <p className="cursor-pointer pt-5 text-blue-600 underline">
+                  Continue reading...
+                </p>
+              </Link>
+            </div>
+          </article>
+          <section className="flex w-full flex-col items-center justify-center">
+            <article className="cursor-pointer flex h-fit w-full flex-row  items-center justify-start space-x-5 border-gray-800 p-10 py-5">
+              <div className="">
+                <Link href="/">
+                  <p className="cursor-pointer text-xs font-bold text-blue-600">
+                    World
+                  </p>
+                </Link>
+                <h2 className="text-normal font-bold">
+                  {posts_sorted[5].title}
+                </h2>
+                <p className="text-sm text-gray-500">
+                  {new Date(posts_sorted[5]._createdAt).toLocaleString([], {
+                    month: 'numeric',
+                    day: 'numeric',
+                  })}
+                </p>
+
+              </div>
+            </article>
+            <article className="cursor-pointer flex h-fit w-full flex-row  items-center justify-start space-x-5 border-gray-800 p-10 py-5">
+              <div className="">
+                <Link href="/">
+                  <p className="cursor-pointer text-xs font-bold text-blue-600">
+                    World
+                  </p>
+                </Link>
+                <h2 className="text-normal font-bold">
+                  {posts_sorted[3].title}
+                </h2>
+                <p className="text-sm text-gray-500">
+                  {new Date(posts_sorted[3]._createdAt).toLocaleString([], {
+                    month: 'numeric',
+                    day: 'numeric',
+                  })}
+                </p>
+
+                
+              </div>
+            </article>
+            <article className="cursor-pointer flex h-fit w-full flex-row  items-center justify-start space-x-5 border-gray-800 p-10 py-5">
+              <div className="">
+                <Link href="/">
+                  <p className="cursor-pointer text-xs font-bold text-blue-600">
+                    World
+                  </p>
+                </Link>
+                <h2 className="text-normal font-bold">
+                  {posts_sorted[4].title}
+                </h2>
+                <p className="text-sm text-gray-500">
+                  {new Date(posts_sorted[4]._createdAt).toLocaleString([], {
+                    month: 'numeric',
+                    day: 'numeric',
+                  })}
+                </p>
+
+                
+              </div>
+            </article>
+          </section>
+        </section>
+
         <section className=" mb-10 grid grid-cols-3 grid-rows-1 gap-x-5">
           <div className="col-span-2 rounded">
             <hr className="my-5" />
