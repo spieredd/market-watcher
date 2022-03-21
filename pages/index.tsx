@@ -56,7 +56,7 @@ const Home: NextPage = ({ posts }: any) => {
               Market Watcher
             </h1>
           </Link>
-          <Link href="/">
+          <Link href="/login">
             <button className="rounded border border-gray-700 px-2 py-1 text-gray-700 duration-300 ease-in-out hover:bg-gray-600 hover:text-white">
               Sign up
             </button>
